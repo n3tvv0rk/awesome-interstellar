@@ -1,7 +1,7 @@
 Awesome-Interstellar
 ====================
 ------------------------
-Theme for Awesome WM 4.x (used under Arch Linux)
+Theme for Awesome WM 4.x (used on Arch Linux)
 ------------------------
 Fork and inspired by awesome-copycats_
 
