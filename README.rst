@@ -20,4 +20,4 @@ This theme use icons_
 
 .. _icons: https://github.com/n3tvv0rk/awesome-interstellar/blob/master/Icons.bdf
 .. _awesome-copycats: https://github.com/copycat-killer/awesome-copycats
-
+.. _BY-NC-SA: http://creativecommons.org/licenses/by-nc-sa/4.0
