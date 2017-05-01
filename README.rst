@@ -1,8 +1,10 @@
 Awesome-Interstellar
 ====================
 
+-------------------------------------
 Theme for Awesome WM 4.x
 Fork and inspired by awesome-copycats_
+-------------------------------------
 
 :Source: https://github.com/n3tvv0rk/awesome-interstellar
 :License: BY-NC-SA_
