@@ -8,6 +8,13 @@ Fork and inspired by awesome-copycats_
 :Source: https://github.com/n3tvv0rk/awesome-interstellar
 :License: BY-NC-SA_
 
+Gallery
+=======
+
+**Interstellar**
+
+.. image:: https://raw.githubusercontent.com/n3tvv0rk/awesome-interstellar/master/preview.png
+
 Notes
 =====
 
