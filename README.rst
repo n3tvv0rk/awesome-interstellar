@@ -1,5 +1,5 @@
 Awesome-Interstellar
-======================
+====================
 
 -------------------------
 Theme for Awesome WM 4.x
@@ -14,8 +14,6 @@ Notes
 =====
 
 This theme use icons_
-
-
 
 
 .. _icons: https://github.com/n3tvv0rk/awesome-interstellar/blob/master/Icons.bdf
