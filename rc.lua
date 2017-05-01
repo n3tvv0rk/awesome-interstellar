@@ -220,7 +220,7 @@ globalkeys = awful.util.table.join(
 
     -- Take a screenshot
     -- https://github.com/copycat-killer/dots/blob/master/bin/screenshot
-    awful.key({ altkey }, "p", function() os.execute("screenshot") end),
+    awful.key({}, "Print", function() os.execute("screenshot.sh") end),
 
     -- Hotkeys
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -576,7 +576,7 @@ awful.rules.rules = {
 
     -- Set Firefox to always map on the tag 2, on screen 1.
     { rule = { class = "Firefox" },
-      properties = { floating = true, tag = screen[1].tags[2] } },
+      properties = { floating = true, screen = 1, tag = screen[1].tags[2] } },
 
     { rule = { class = "VirtualBox" },
       properties = { floating = true, tag = screen[1].tags[6] } },
