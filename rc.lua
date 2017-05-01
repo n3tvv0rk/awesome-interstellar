@@ -53,7 +53,7 @@ run_once({ "urxvtd", "unclutter -root" })
 -- }}}
 
 -- {{{ Variable definitions
-local chosen_theme = "powerarrow-dark"
+local chosen_theme = "interstellar"
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "urxvt"
@@ -211,15 +211,14 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     -- Volume control
-    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 5%-") end,
-              {description="volume down", group="launcher"}),
-    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 5%+") end,
-              {description="volume up", group="launcher"}),
-    awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -q sset Master toggle") end,
-              {description="toggle volume", group="launcher"}),
+    --awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 5%-") end,
+              --{description="volume down", group="launcher"}),
+    --awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 5%+") end,
+              --{description="volume up", group="launcher"}),
+    --awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -q sset Master toggle") end,
+              --{description="toggle volume", group="launcher"}),
 
     -- Take a screenshot
-    -- https://github.com/copycat-killer/dots/blob/master/bin/screenshot
     awful.key({}, "Print", function() os.execute("screenshot.sh") end),
 
     -- Hotkeys
@@ -363,17 +362,17 @@ globalkeys = awful.util.table.join(
     awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end),
 
     -- ALSA volume control
-    awful.key({ altkey }, "Up",
+    awful.key({}, "XF86AudioRaiseVolume",
         function ()
             os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
             beautiful.volume.update()
         end),
-    awful.key({ altkey }, "Down",
+    awful.key({}, "XF86AudioLowerVolume",
         function ()
             os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
             beautiful.volume.update()
         end),
-    awful.key({ altkey }, "m",
+    awful.key({}, "XF86AudioMute",
         function ()
             os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or 
 beautiful.volume.channel))
