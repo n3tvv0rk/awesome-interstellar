@@ -210,13 +210,6 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    -- Volume control
-    --awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 5%-") end,
-              --{description="volume down", group="launcher"}),
-    --awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 5%+") end,
-              --{description="volume up", group="launcher"}),
-    --awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -q sset Master toggle") end,
-              --{description="toggle volume", group="launcher"}),
 
     -- Take a screenshot
     awful.key({}, "Print", function() os.execute("screenshot.sh") end),
@@ -378,39 +371,29 @@ globalkeys = awful.util.table.join(
 beautiful.volume.channel))
             beautiful.volume.update()
         end),
-    awful.key({ altkey, "Control" }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end),
-    awful.key({ altkey, "Control" }, "0",
-        function ()
-            os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end),
 
     -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
+    awful.key({}, "XF86AudioPlay",
         function ()
             awful.spawn.with_shell("mpc toggle")
             beautiful.mpd.update()
         end),
-    awful.key({ altkey, "Control" }, "Down",
+    awful.key({}, "XF86AudioStop",
         function ()
             awful.spawn.with_shell("mpc stop")
             beautiful.mpd.update()
         end),
-    awful.key({ altkey, "Control" }, "Left",
+    awful.key({}, "XF86AudioPrev",
         function ()
             awful.spawn.with_shell("mpc prev")
             beautiful.mpd.update()
         end),
-    awful.key({ altkey, "Control" }, "Right",
+    awful.key({}, "XF86AudioNext",
         function ()
             awful.spawn.with_shell("mpc next")
             beautiful.mpd.update()
         end),
-    awful.key({ altkey }, "0",
+    awful.key({ altkey }, "à",
         function ()
             local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
             if beautiful.mpd.timer.started then

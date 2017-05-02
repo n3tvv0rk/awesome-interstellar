@@ -105,6 +105,27 @@ theme.cal = lain.widget.calendar({
     }]]--
 })
 
+-- MPD
+local mpdicon = wibox.widget.imagebox(theme.widget_music)
+mpdicon:buttons(awful.util.table.join(awful.button({ }, 1, function () lain.widget.mpd({}) end)))
+theme.mpd = lain.widget.mpd({
+    settings = function()
+        if mpd_now.state == "play" then
+            artist = " " .. mpd_now.artist .. " "
+            title  = mpd_now.title  .. " "
+            mpdicon:set_image(theme.widget_music_on)
+        elseif mpd_now.state == "pause" then
+            artist = " mpd "
+            title  = "paused "
+        else
+            artist = ""
+            title  = ""
+            mpdicon:set_image(theme.widget_music)
+        end
+
+    end
+})
+
 -- MEM
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local mem = lain.widget.mem({
@@ -220,6 +241,9 @@ function theme.at_screen_connect(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+            mpdicon,
+            theme.mpd.widget,
+            pipe,
             memicon,
             mem.widget,
             pipe, 
